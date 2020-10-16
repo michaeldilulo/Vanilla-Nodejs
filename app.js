@@ -29,7 +29,7 @@ const http = require('http');
 // Store this in a variable, because it returns a server
 const server = http.createServer((req, res) => {
     // sends back request information
-    console.log(req);
+    console.log(req.url, req.method, req.headers);
     //process.exit() will still run the request but when you reload the page it will quit the process
     // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
     //* process.exit();
@@ -37,4 +37,4 @@ const server = http.createServer((req, res) => {
 
 //server to listen for requests and keep it running
 // 3000 is the port name with local host
-server.listen(3000);
+server.listen(3000, 'localhost');
