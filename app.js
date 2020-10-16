@@ -30,6 +30,9 @@ const http = require('http');
 const server = http.createServer((req, res) => {
     // sends back request information
     console.log(req);
+    //process.exit() will still run the request but when you reload the page it will quit the process
+    // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
+    //* process.exit();
 })
 
 //server to listen for requests and keep it running
