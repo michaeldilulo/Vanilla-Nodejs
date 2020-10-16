@@ -33,6 +33,19 @@ const server = http.createServer((req, res) => {
     //process.exit() will still run the request but when you reload the page it will quit the process
     // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
     //* process.exit();
+
+    //Can use the response object for filled data to send back
+    // allows you to get a new Header
+    // attach a header to the response
+    //* res.setHeader('Content-Type', 'text/html');
+    
+    // allows you to write something with a response
+    // can send HTML using res.write on multiple lines
+    //* res.write('')
+
+    //cannot write anymore with you ending it, it will be sent back to the client before end
+    // can view the setHeader in the Chrome Developer Tools
+    //*res.end();
 })
 
 //server to listen for requests and keep it running
