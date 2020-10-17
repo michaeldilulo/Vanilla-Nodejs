@@ -29,7 +29,20 @@ const http = require('http');
 // Store this in a variable, because it returns a server
 const server = http.createServer((req, res) => {
     // sends back request information
-    console.log(req.url, req.method, req.headers);
+    // Form is what is input in the videos. Below is just an example
+    // Sending Post requests with Forms. Get and Post are the 2 most popular ones
+    // url === / if the path is / than it will display everything underneath(Form in Udemy Course)
+
+    // if you put res.end() it will keep running if there is something else underneath. Need to return res.end();
+    //* parsing URL
+    //* const url = req.url;
+    //* if (url === '/') {
+    //*     res.write('')
+    //*     res.write('')
+    // *    res.write('')
+    //* }
+
+
     //process.exit() will still run the request but when you reload the page it will quit the process
     // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
     //* process.exit();
