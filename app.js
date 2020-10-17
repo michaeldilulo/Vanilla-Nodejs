@@ -42,6 +42,18 @@ const server = http.createServer((req, res) => {
     // *    res.write('')
     //* }
 
+    //parse method 
+    //* const method = req.method;
+    //* if (url === '/message' && method === 'POST') {
+        // redirecting and creating a new file
+        // fs(file system) core module is introduced here
+        // const fs = require('fs')
+        // 302 indicates sent message and redirected to localhost
+    //* res.writeFileSync('message.txt', 'Text')
+    //* res.statusCode = 302
+    //* res.setHeader('Location', '/')
+    //* }
+
 
     //process.exit() will still run the request but when you reload the page it will quit the process
     // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
