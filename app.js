@@ -54,6 +54,30 @@ const server = http.createServer((req, res) => {
     //* res.setHeader('Location', '/')
     //* }
 
+    //Incoming Requests:::
+    // Stream is ongoing process, request is read by Node.js in chunks(multiple parts)
+    // theoretically can start working on individual chunks 
+    // How node handles all request, does not know in advance how big and complex 
+    // with our code we can work with these chunks
+    // use BUFFER for this. Like a bus stop, a construct that allows you to hold multiple chunks and work with them before they are released
+    // use on method to listen to certain events (example is Data event)
+    // data event will be fired when a new chunk is ready to be read
+    // add a second argument, function that is executed for every event
+    // Node.js will execute this as often as it needs before it is done
+
+    //* const body = [];
+    //* req.on('data', (chunk) => {
+    //*     body.push(chunk);
+    //* })
+
+    //register another event listener
+    //* req.on('end', () => {
+    // only use .toString() because it is known that it will be a string
+    //* const parsedBody = Buffer.concat(body).toString();
+    //we can work with the parsed body, form will automatically send the request as key value pairs
+    //* console.log(parsedBody);
+    //* })
+
 
     //process.exit() will still run the request but when you reload the page it will quit the process
     // Typically you do not call this in your code, basically hard exits the event loop and the program shuts down
