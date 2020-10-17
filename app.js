@@ -74,6 +74,7 @@ const server = http.createServer((req, res) => {
     //* req.on('end', () => {
     // only use .toString() because it is known that it will be a string
     //* const parsedBody = Buffer.concat(body).toString();
+    //* const message = parsedBody.split('=')[1];
     //we can work with the parsed body, form will automatically send the request as key value pairs
     //* console.log(parsedBody);
     //* })
@@ -86,7 +87,7 @@ const server = http.createServer((req, res) => {
     //Can use the response object for filled data to send back
     // allows you to get a new Header
     // attach a header to the response
-    //* res.setHeader('Content-Type', 'text/html');
+    //* res.setHeader('Content-Type', message);
     
     // allows you to write something with a response
     // can send HTML using res.write on multiple lines
